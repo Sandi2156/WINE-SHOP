@@ -1,0 +1,252 @@
+/* learning 
+
+    max-width : x px; that means width of the container can't be greater than x px, it it becomes less
+                        it'll manage it's height automatically.
+    flex-grow : 1 or any; it specifies how much the item will grow relative to the other flexible
+                            items in the same container. 
+
+    flex : 1; it is the combination of flex grow flex-shrink flex-basis
+*/
+
+
+
+
+
+body{
+    margin: 0;
+    font-family: 'Merriweather Sans', sans-serif;
+    color: white;
+    background-color: #11121A;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+header{
+    background-color: #1c1c24;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.header-container {
+    /* background-color: pink; */
+    display: flex;
+    max-width: 1100px;
+    width: 100%;
+    align-items: center;
+    padding: 0 25px;
+}
+
+.header-container .logo{
+    height: 30px;
+    margin-right: 10px;
+}
+
+.header-container .logo img {
+    height: 100%;
+}
+
+.search {
+    width: 100%;
+    /* max-width: 1100px;
+    margin: 0 auto; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 25px;
+    margin-bottom: 30px;
+    /* background-color: yellow; */
+}
+
+.search-container {
+    width: 1100px;
+    /* margin: 0 auto; */
+    background-color: #1c1c24;
+    height: 60px;
+    border-radius: 10px;
+    border: 2px solid #222328;
+    display: flex;
+    overflow: hidden;
+}
+
+.input-container {
+    flex-grow: 1;
+    /* background-color: pink; */
+    display: flex;
+    align-items: center;
+}
+
+.input-container input {
+    flex-grow: 1;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 1rem;
+    margin-left: 20px;
+}
+    
+.input-container i {
+    font-size: 20px;
+    margin-left: 25px;
+}
+
+.button-container  {
+    background-color: #ced4e6;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: black;
+    font-family: 'Lato' , sans-serif;
+    font-weight: 600;
+    font-size: 1.4rem;
+    font-style: italic;
+}
+
+.button-container:hover {
+    background-color: #1c1c24;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.wines-list {
+    max-width: 1100px;
+    /* width: 1100px; */
+    /* background-color: rgb(85, 85, 7); */
+ 
+    margin: 0 auto;
+    /* height: 100vh; */
+    padding: 0 25px;
+}
+
+
+
+
+.wines-container {
+    display: grid;
+    gap: 40px;
+    /* flex-grow: 1; */
+    grid-template-columns: repeat(3, 1fr);
+    background-color: #11121A;    
+}
+ 
+
+
+
+
+
+/* Responsive */
+
+@media screen and (max-width : 920px ) {
+    .wines-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width : 600px) {
+    .wines-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+
+.wine-card {
+    background-color: #2e2e39;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.wine-card:hover {
+    transform: scale(1.03);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.card-top img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+}
+
+.wine-card .title {
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+    font-family: 'Lato', sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    color: rgb(42,177,181);
+    word-spacing: 1px;
+    letter-spacing: 1px;
+}
+
+.quality-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.quality-section .rating i{
+    color:red ;
+}
+
+.quality-section .price i{
+    color: rgb(239,113,0);
+}
+
+.description {
+    margin-bottom: 16px;
+    flex-grow: 1;
+    color: rgb(228, 196, 171);
+}
+
+.shop-button {
+    /* background-color: pink; */
+    display: flex;
+    width: 50%;
+    padding: 12px;
+    border-radius: 50px;
+    border: 1px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.shop-button i {
+    margin-left: 5px;
+}
+
+.shop-button a {
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    color: white;
+}
+
+.shop-button:hover {
+    transition: all 0.4s ease;
+    background-color: #434352;
+}
+#error {
+    color: yellow;
+    text-align: center;
+    background-color: #2e2e39;
+    padding: 10px;
+}
+
